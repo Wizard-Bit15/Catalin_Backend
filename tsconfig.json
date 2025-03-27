@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "commonjs",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": false, // Turn off strict type-checking
+    "skipLibCheck": true,
+    "noEmitOnError": false,
+    "noImplicitAny": false, // Allow implicit 'any' types
+    "noImplicitThis": false, // Allow 'this' to be of type 'any'
+    "noImplicitReturns": false, // Allow functions to return without a consistent return type
+    "noUnusedLocals": false, // Do not report errors on unused locals
+    "noUnusedParameters": false // Do not report errors on unused parameters
+  }
+}
