@@ -5,6 +5,10 @@ import dotenv from "dotenv";
 
 import logger from "./utils/logger";
 import usersRouter from "./routes/usersRouter";
+import productsRouter from "./routes/productsRouter";
+import doctorsRouter from "./routes/doctorsRouter";
+import plansRouter from "./routes/plansRouter";
+import profileRouter from "./routes/profileRouter";
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -24,6 +28,16 @@ app.options("*", (req, res) => {
 app.set("json spaces", 2);
 
 app.use("/v1/users", usersRouter);
+
+app.use("/v1/products", productsRouter);
+
+app.use("/v1/doctors", doctorsRouter);
+
+app.use("/v1/doctors", doctorsRouter);
+
+app.use("/v1/profile", profileRouter);
+
+app.use("/v1/plans", plansRouter);
 
 app.get("/v1", (req, res) => {
   res.json({ message: "Hello from Express!" });

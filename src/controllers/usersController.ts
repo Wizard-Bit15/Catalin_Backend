@@ -376,9 +376,8 @@ export class UsersController {
   getAllUsers = async (req: any, res: Response): Promise<any> => {
     try {
       const { data, error } = await supabase
-        .from("users")
+        .from("profiles")
         .select("*")
-        .eq("user_status", true)
         .order("created_at", { ascending: false });
       if (error) {
         throw error;
@@ -386,7 +385,7 @@ export class UsersController {
 
       return res.status(200).json({ users: data });
     } catch (err) {
-      console.error(`Error in get test user : ${JSON.stringify(err)}`);
+      console.error(`Error in get all user : ${JSON.stringify(err)}`);
       return res
         .status(500)
         .json({ message: "Internal Server Error", error: err });
